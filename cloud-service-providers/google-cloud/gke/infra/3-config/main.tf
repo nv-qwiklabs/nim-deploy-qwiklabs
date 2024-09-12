@@ -67,8 +67,8 @@ resource "kubernetes_secret" "registry_secret" {
       "auths" = {
         "${var.registry_server}" = {
           "username" = var.ngc_username
-          "password" = var.ngc_cli_api_key
-          "auth"     = base64encode("${var.ngc_username}:${var.ngc_cli_api_key}")
+          "password" = var.ngc_api_key
+          "auth"     = base64encode("${var.ngc_username}:${var.ngc_api_key}")
         }
       }
     })
